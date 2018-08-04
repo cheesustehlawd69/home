@@ -1,10 +1,17 @@
+! Reload X server resource database utility:
+! $ xrdb -merge ~/.Xresources
+
+
 ! X FreeType Font rasterization ----------------------------------------------
 
-Xft.dpi: 75
+Xft.dpi:       75
 Xft.antialias: true
-Xft.hinting: full
+Xft.hinting:   true
+!Xft.hinting:   full
+Xft.rgba:      rgb
+Xft.autohint:  false
 Xft.hintstyle: hintslight
-Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 
 
 ! Xcursor --------------------------------------------------------------------
@@ -13,10 +20,12 @@ Xcursor*theme:  Vanilla-DMZ-AA
 Xcursor.size:   22
 
 
-! Terminal color theme ------------------------------------------------------------
+! terminal colors ------------------------------------------------------------
 
+! tangoesque scheme
 *background:  #222222
 *foreground:  #aaaaaa
+!
 ! Black
 *color0:      #000000
 *color8:      #555753
@@ -51,8 +60,8 @@ Xcursor.size:   22
 !urxvt*boldFont: xft:dejavu sans mono:pixelsize=14
 !urxvt*font:     xft:Pragmata:pixelsize=13
 !urxvt*boldFont: xft:Pragmata:pixelsize=13
-URxvt.font: xft:Monospace:Regular:pixelsize=10
-URxvt.boldFont: xft:Monospace:Bold:pixelsize=10
+URxvt.font: xft:Monospace:Regular:pixelsize=9
+URxvt.boldFont: xft:Monospace:Bold:pixelsize=9
 URxvt*dynamicColors: on
 URxvt.letterSpace: -1
 
@@ -110,6 +119,8 @@ urxvt.colorBD:            #ffffff
 urxvt.colorIT:            #bbbbbb
 urxvt.colorUL:            #999999
 urxvt.underlineColor:     #999999
+!urxvt*background:         rgba:2222/2222/2222/dddd
+!urxvt*background:         rgba:0000/0000/0000/dddd
 
 
 ! xterm ----------------------------------------------------------------------
@@ -117,7 +128,7 @@ urxvt.underlineColor:     #999999
 xterm*title:              xterm
 xterm*geometry:           200x60
 xterm*internalBorder:     0
-xterm*faceName:           terminus:pixelsize=10
+xterm*faceName:           terminus:pixelsize=9
 xterm*boldfaceName:       cure:Regular
 xterm*colorBD:            #ffffff
 xterm*colorBDMode:        false
@@ -214,7 +225,6 @@ xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-*-120-*-*-*-*-iso8
 xscreensaver.Dialog.buttonFont:         -*-fixed-bold-r-*-*-*-120-*-*-*-*-iso8859-1
 xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-*-100-*-*-*-*-iso8859-1
 xscreensaver.passwd.passwdFont:         -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
-
 !general dialog box (affects main hostname, username, password text)
 xscreensaver.Dialog.foreground:         #ffffff
 xscreensaver.Dialog.background:         #111111
@@ -228,12 +238,10 @@ xscreensaver.Dialog.text.background:    #ffffff
 xscreensaver.Dialog.internalBorderWidth:24
 xscreensaver.Dialog.borderWidth:        20
 xscreensaver.Dialog.shadowThickness:    2
-
 !timeout bar (background is actually determined by Dialog.text.background)
 xscreensaver.passwd.thermometer.foreground:  #ff0000
 xscreensaver.passwd.thermometer.background:  #000000
 xscreensaver.passwd.thermometer.width:       8
-
 !datestamp format--see the strftime(3) manual page for details
 xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 
@@ -282,7 +290,6 @@ xcalc*ti.button34.background: gray95
 xcalc*ti.button37.background: gray95
 xcalc*ti.button38.background: gray95
 xcalc*ti.button39.background: gray95
-
 
 ! xmessage ------------------------------------------------------------
 xmessage*form.okay.shapeStyle: rectangle
