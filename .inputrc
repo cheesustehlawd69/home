@@ -1,0 +1,94 @@
+$include /etc/inputrc
+
+# Readline variables
+##--- set -o lists available options with settings
+#
+# display completion matches instead of ringing the bell
+set show-all-if-ambiguous on
+
+# ignore signal characters generated from the keyboard
+set echo-control-characters off
+
+# perform matching/completions in case-insensitive fashion
+set completion-ignore-case on
+
+# completion insensitivity between hyphens and underscores
+set completion-map-case on
+
+# maximum number of completions displayed
+set completion-query-items 16
+
+# append a foward slash to directories
+set mark-directories on
+
+# append a slash to symbolic links
+set mark-symlinked-directories on
+
+# display completions horizontally in alphabetical order
+set print-completions-horizontally on
+
+# list matches immediately instead of ringing bell
+set show-all-if-unmodified on
+
+# completion text after cursor
+set skip-completed-text on
+
+# appended file's type to filename when listing completions
+set visible-stats on
+
+# do not bell on tab-completion
+set bell-style none
+
+# enable eight-bit input
+set meta-flag on
+set input-meta on
+
+# disable eighth bit to ascii key sequence conversion
+set convert-meta off
+
+# display eighth bit directly instead of escape sequences
+set output-meta on
+
+# vi default key bindings
+set editing-mode vi
+
+# prepend PS1 with (+ for insert mode, : for EX mode)
+set show-mode-in-prompt on
+
+# vi keymaps
+set keymap vi-command
+set keymap vi-insert
+set keymap vi-move
+
+$if mode=vi
+
+# Escape sequences
+##--- bind -P lists Bindable Readline Commands
+#
+# mappings for "up" and "down" arrow keys to search the history
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+
+# map Alt+S to search history
+"\es":forward-search-history
+
+# allow the use of the Home/End keys
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+
+# allow the use of the Delete/Insert keys
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# alternate mappings for "page up" and "page down" to search the history
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+
+# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+$endif
