@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#
+# ~/.xprofile
+#
+# Execute commands at the beginning of the X user session:
+
+#
+# Mute bell volume:
+   xset -b b off &
+#
+# Set background color of root window:
+   xsetroot -solid black &
+#
+# Set standard cursors from the cursor font:
+   xsetroot -cursor_name left_ptr &
+#
+# Launch Xscreensaver daemon:
+   xscreensaver -no-splash &
+#
+# Launch shell cmds w/ keyboard or mouse:
+   xbindkeys &
+#
+# Scaled wallpaper background:
+   DISPLAY=:0.0 feh --bg-fill "$(find ~/retroline_by_ipur/|shuf -n1)" &
+#   feh --bg-scale ~/retroline_by_ipur/5.jpg &
+#
+# Run SpaceFM as a daemon:
+   spacefm -d &
+#
+# System monitor & notification utility for X:
+   conky | dzen2 -p -w '1920' -h '13' -ta 'l' -bg '#3F3F3F' -y '1209' -fn '-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*' &
+#conky | dzen2 -p -w '1280' -h '15' -ta 'l' -fg '#DCDCCC' -bg '#3F3F3F' -y '1009' -fn '-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*' &
+#
+# Volume control system tray applet:
+   volumeicon &
+#
+# Clipit system tray applet:
+   clipit &
+#
+# Wicd-client system tray applet:
+   wicd-client --tray &
+
+# Blueman Applet:
+   blueman-applet &
