@@ -1,0 +1,29 @@
+# Xscreensaver screen lock command:
+# (Alt + F2)
+  "xscreensaver-command -lock"
+   m:0x8 + c:68
+
+# Launch command-line screenshot utility:
+# (PrtSc)
+  "scrot -e 'mv $f ~/Pictures/ScreenGrabs/ 2>/dev/null'"
+   m:0x0 + c:107
+
+# Kill a client by its X resource:
+# (Alt + F4)
+  "xkill"
+   m:0x8 + c:70
+
+# Increase volume @ 5% increments:
+# (Mod2 + KP_Add)
+  "amixer set Master 5%+"
+  m:0x10 + c:86
+
+# Decrease volume @ 5% increments:
+# (Mod2 + KP_Subtract)
+  "amixer set Master 5%-"
+  m:0x10 + c:82
+
+# Toggle mute/unmute of the volume:
+# (Mod2 + KP_Multiply)
+  "amixer set Master toggle"
+  m:0x10 + c:63
